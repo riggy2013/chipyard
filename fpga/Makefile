@@ -30,6 +30,20 @@ ifeq ($(SUB_PROJECT),vcu118)
 	FPGA_BRAND        ?= xilinx
 endif
 
+ifeq ($(SUB_PROJECT),vcu128)
+	SBT_PROJECT       ?= fpga_platforms
+	MODEL             ?= VCU128FPGATestHarness
+	VLOG_MODEL        ?= VCU128FPGATestHarness
+	MODEL_PACKAGE     ?= chipyard.fpga.vcu128
+	CONFIG            ?= RocketVCU128Config
+	CONFIG_PACKAGE    ?= chipyard.fpga.vcu128
+	GENERATOR_PACKAGE ?= chipyard
+	TB                ?= none # unused
+	TOP               ?= ChipTop
+	BOARD             ?= vcu128
+	FPGA_BRAND        ?= xilinx
+endif
+
 ifeq ($(SUB_PROJECT),bringup)
 	SBT_PROJECT       ?= fpga_platforms
 	MODEL             ?= BringupVCU118FPGATestHarness
